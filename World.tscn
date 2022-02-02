@@ -1,12 +1,10 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://game_background_1.png" type="Texture" id=1]
 [ext_resource path="res://tile.png" type="Texture" id=2]
 [ext_resource path="res://Player Animation/idle-removebg-preview.png" type="Texture" id=3]
 [ext_resource path="res://Player Animation/run-removebg-preview.png" type="Texture" id=4]
 [ext_resource path="res://Player Animation/shoot-removebg-preview.png" type="Texture" id=5]
-[ext_resource path="res://UI/right arrow.png" type="Texture" id=6]
-[ext_resource path="res://UI/crosshair.png" type="Texture" id=7]
 [ext_resource path="res://Camera2D.gd" type="Script" id=8]
 [ext_resource path="res://Player.gd" type="Script" id=9]
 
@@ -134,50 +132,89 @@ position = Vector2( -338, -181 )
 position = Vector2( 667, 302 )
 texture = ExtResource( 1 )
 
+[node name="GameBackground2" type="Sprite" parent="World/Backgrounds"]
+position = Vector2( 2587, 302 )
+texture = ExtResource( 1 )
+
 [node name="Floor" type="Node2D" parent="World"]
 
 [node name="Tile" type="Sprite" parent="World/Floor"]
-position = Vector2( -373, 728.5 )
+position = Vector2( -373, 544.5 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
 [node name="Tile2" type="Sprite" parent="World/Floor"]
-position = Vector2( 153, 729 )
+position = Vector2( 153, 545 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
 [node name="Tile3" type="Sprite" parent="World/Floor"]
-position = Vector2( -110, 729 )
+position = Vector2( -110, 545 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
 [node name="Tile4" type="Sprite" parent="World/Floor"]
-position = Vector2( 415, 728.5 )
+position = Vector2( 415, 544.5 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
 [node name="Tile5" type="Sprite" parent="World/Floor"]
-position = Vector2( 941, 729 )
+position = Vector2( 941, 545 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
 [node name="Tile6" type="Sprite" parent="World/Floor"]
-position = Vector2( 678, 729 )
+position = Vector2( 678, 545 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
 [node name="Tile7" type="Sprite" parent="World/Floor"]
-position = Vector2( 1203, 729.5 )
+position = Vector2( 1203, 545.5 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
 [node name="Tile8" type="Sprite" parent="World/Floor"]
-position = Vector2( 1729, 730 )
+position = Vector2( 1729, 546 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
 [node name="Tile9" type="Sprite" parent="World/Floor"]
-position = Vector2( 1466, 730 )
+position = Vector2( 1466, 546 )
+scale = Vector2( 0.4025, 0.231667 )
+texture = ExtResource( 2 )
+
+[node name="Tile10" type="Sprite" parent="World/Floor"]
+position = Vector2( 1991, 545.5 )
+scale = Vector2( 0.4025, 0.231667 )
+texture = ExtResource( 2 )
+
+[node name="Tile11" type="Sprite" parent="World/Floor"]
+position = Vector2( 2517, 546 )
+scale = Vector2( 0.4025, 0.231667 )
+texture = ExtResource( 2 )
+
+[node name="Tile12" type="Sprite" parent="World/Floor"]
+position = Vector2( 2254, 546 )
+scale = Vector2( 0.4025, 0.231667 )
+texture = ExtResource( 2 )
+
+[node name="Tile13" type="Sprite" parent="World/Floor"]
+position = Vector2( 2779, 545.5 )
+scale = Vector2( 0.4025, 0.231667 )
+texture = ExtResource( 2 )
+
+[node name="Tile14" type="Sprite" parent="World/Floor"]
+position = Vector2( 3305, 546 )
+scale = Vector2( 0.4025, 0.231667 )
+texture = ExtResource( 2 )
+
+[node name="Tile15" type="Sprite" parent="World/Floor"]
+position = Vector2( 3042, 546 )
+scale = Vector2( 0.4025, 0.231667 )
+texture = ExtResource( 2 )
+
+[node name="Tile16" type="Sprite" parent="World/Floor"]
+position = Vector2( 3567, 546.5 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
@@ -186,59 +223,10 @@ position = Vector2( -197, -29 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 4
+frame = 2
 playing = true
 script = ExtResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 script = ExtResource( 8 )
-
-[node name="Control" type="Control" parent="Camera2D"]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Right" type="Button" parent="Camera2D/Control"]
-margin_left = -363.0
-margin_top = 178.0
-margin_right = 698.0
-margin_bottom = 1233.0
-rect_scale = Vector2( 0.101439, 0.113237 )
-icon = ExtResource( 6 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left" type="Button" parent="Camera2D/Control"]
-margin_left = -382.0
-margin_top = 178.0
-margin_right = 679.0
-margin_bottom = 1233.0
-rect_scale = Vector2( -0.0958557, 0.114876 )
-icon = ExtResource( 6 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Crosshair" type="Button" parent="Camera2D/Control"]
-margin_left = 349.0
-margin_top = 309.0
-margin_right = 1561.0
-margin_bottom = 1515.0
-rect_scale = Vector2( 0.113408, -0.12 )
-icon = ExtResource( 7 )
-flat = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[connection signal="button_down" from="Camera2D/Control/Right" to="Player" method="_on_Right_button_down"]
-[connection signal="button_up" from="Camera2D/Control/Right" to="Player" method="_on_Right_button_up"]
-[connection signal="button_down" from="Camera2D/Control/Left" to="Player" method="_on_Left_button_down"]
-[connection signal="button_up" from="Camera2D/Control/Left" to="Player" method="_on_Left_button_up"]
-[connection signal="pressed" from="Camera2D/Control/Crosshair" to="Player" method="_on_Crosshair_pressed"]

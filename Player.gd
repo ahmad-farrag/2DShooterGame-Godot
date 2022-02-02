@@ -12,25 +12,14 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_Right_button_down():
-	pass # Replace with function body.
-
-
-func _on_Right_button_up():
-	pass # Replace with function body.
-
-
-func _on_Left_button_down():
-	pass # Replace with function body.
-
-
-func _on_Left_button_up():
-	pass # Replace with function body.
-
-
-func _on_Crosshair_pressed():
-	pass # Replace with function body.
+func _process(delta):
+	if Input.is_action_pressed("MoveRight")&&position.x<2300:
+		translate(Vector2(5,0))
+		set_scale(Vector2(1.5,1.5))
+	if Input.is_action_pressed("MoveLeft")&&position.x>-300:
+		translate(Vector2(-5,0))
+		set_scale(Vector2(-1.5,1.5))
+	if Input.is_action_pressed("MoveUp")&&position.y>-100:
+		translate(Vector2(0,-5))
+	if Input.is_action_pressed("MoveDown")&&position.y<360:
+		translate(Vector2(0,5))	
