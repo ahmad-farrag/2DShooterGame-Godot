@@ -11,7 +11,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_pressed("MoveRight")&&position.x<2300:
 		play("idle")
 		translate(Vector2(speed,0))
@@ -39,3 +39,6 @@ func _process(delta):
 func getDirectionIndicator():
 	return directionindicator		
 		
+
+
+
