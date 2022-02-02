@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://game_background_1.png" type="Texture" id=1]
 [ext_resource path="res://tile.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Player Animation/shoot-removebg-preview.png" type="Texture" id=5]
 [ext_resource path="res://UI/right arrow.png" type="Texture" id=6]
 [ext_resource path="res://UI/crosshair.png" type="Texture" id=7]
+[ext_resource path="res://Camera2D.gd" type="Script" id=8]
+[ext_resource path="res://Player.gd" type="Script" id=9]
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
@@ -179,18 +181,18 @@ position = Vector2( 1466, 730 )
 scale = Vector2( 0.4025, 0.231667 )
 texture = ExtResource( 2 )
 
-[node name="Objects" type="Node2D" parent="World"]
-
 [node name="Player" type="AnimatedSprite" parent="."]
 position = Vector2( -197, -29 )
 scale = Vector2( 1.5, 1.5 )
 frames = SubResource( 1 )
 animation = "idle"
-frame = 3
+frame = 4
 playing = true
+script = ExtResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+script = ExtResource( 8 )
 
 [node name="Control" type="Control" parent="Camera2D"]
 margin_right = 40.0
@@ -234,3 +236,9 @@ flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[connection signal="button_down" from="Camera2D/Control/Right" to="Player" method="_on_Right_button_down"]
+[connection signal="button_up" from="Camera2D/Control/Right" to="Player" method="_on_Right_button_up"]
+[connection signal="button_down" from="Camera2D/Control/Left" to="Player" method="_on_Left_button_down"]
+[connection signal="button_up" from="Camera2D/Control/Left" to="Player" method="_on_Left_button_up"]
+[connection signal="pressed" from="Camera2D/Control/Crosshair" to="Player" method="_on_Crosshair_pressed"]
